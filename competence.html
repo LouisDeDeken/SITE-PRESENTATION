@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Naylo</title>
+    <link rel="stylesheet" href="css/competence.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="video/video-fond.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <header>
+        <h1 class="fade-in">Mes compétences</h1>
+        <nav class="fade-in">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="passions.html">Mes passions</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="fade-in">
+            <h2>Ce que je sais faire</h2>
+            <br>
+            <div class="cards">
+                <div class="card">
+                    <h3>FiveM</h3>
+                    <p>Création de scripts, menu admin, braquages et systèmes RP.</p>
+                </div>
+                <div class="card">
+                    <h3>Discord & Bots</h3>
+                    <p>Bot de modération, commandes personnalisées, interaction avec bases de données.</p>
+                </div>
+                <div class="card">
+                    <h3>Web</h3>
+                    <p>HTML, CSS, JS, sites immersifs et animations modernes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <br>
+            <br>
+            <h2>Retrouvez-moi</h2>
+            <br>
+            <div class="social-icons">
+                <a href="https://github.com/LouisDeDeken" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/DekenLouis70435" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.com/users/1241303746194178160" target="_blank"><i
+                        class="fab fa-discord"></i></a>
+                <a href="mailto:louis.dedeken1@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2025 Naylo</p>
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+</body>
+
+</html>

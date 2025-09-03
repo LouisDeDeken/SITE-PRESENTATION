@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Louis</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="video/video-fond.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <header>
+        <h1 class="fade-in">Contactez-moi</h1>
+        <nav class="fade-in">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="passions.html">Mes passions</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="fade-in">
+            <h2>Réseaux et contact</h2>
+            <br>
+            <ul>
+                <li>Email : louis.dedeken1@gmail.com</li>
+                <li>Discord : _naylo_gn_</li>
+                <li>GitHub : <a href="https://github.com/LouisDeDeken" target="_blank">github.com/LouisDeDeken</a></li>
+            </ul>
+            <br>
+            <br>
+        </section>
+
+        <section class="fade-in">
+            <h2>Mes réseaux</h2>
+            <br>
+            <div class="social-icons">
+                <a href="https://github.com/LouisDeDeken" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/DekenLouis70435" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.com/users/1241303746194178160" target="_blank"><i
+                        class="fab fa-discord"></i></a>
+                <a href="mailto:louis.dedeken1@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2025 Louis</p>
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+</body>
+
+</html>
